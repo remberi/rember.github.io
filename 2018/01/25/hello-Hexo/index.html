@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="野外实践," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="あなたの名前は私です。">
+<meta name="description" content="第一步: 将最新的hexo版本从github clone到本地，执行npm install 相关操作可以参考官网   第二步: 下载next的主题，将主题next放入hexo 的theme文件夹中，初始化主题数据，具体可以参考next官网 第三步: 服务器设置（涉及nginx安装配置，git安装配置，创建git用户，权限设置，node环境下载安装，免密登录，自动化部署等）  nginx 安装配置">
+<meta name="keywords" content="野外实践">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello Hexo">
+<meta property="og:title" content="hexoテーマgithub配置およびサーバーの配置。">
 <meta property="og:url" content="http://yoursite.com/2018/01/25/hello-Hexo/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="あなたの名前は私です。">
+<meta property="og:site_name" content="神の少年">
+<meta property="og:description" content="第一步: 将最新的hexo版本从github clone到本地，执行npm install 相关操作可以参考官网   第二步: 下载next的主题，将主题next放入hexo 的theme文件夹中，初始化主题数据，具体可以参考next官网 第三步: 服务器设置（涉及nginx安装配置，git安装配置，创建git用户，权限设置，node环境下载安装，免密登录，自动化部署等）  nginx 安装配置">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-25T07:19:58.249Z">
+<meta property="og:updated_time" content="2018-01-26T11:13:14.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello Hexo">
-<meta name="twitter:description" content="あなたの名前は私です。">
+<meta name="twitter:title" content="hexoテーマgithub配置およびサーバーの配置。">
+<meta name="twitter:description" content="第一步: 将最新的hexo版本从github clone到本地，执行npm install 相关操作可以参考官网   第二步: 下载next的主题，将主题next放入hexo 的theme文件夹中，初始化主题数据，具体可以参考next官网 第三步: 服务器设置（涉及nginx安装配置，git安装配置，创建git用户，权限设置，node环境下载安装，免密登录，自动化部署等）  nginx 安装配置">
 
 
 
@@ -125,7 +126,7 @@
 
 
 
-  <title>hello Hexo | Hexo</title>
+  <title>hexoテーマgithub配置およびサーバーの配置。 | 神の少年</title>
   
 
 
@@ -165,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">神の少年</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -196,16 +197,6 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -275,13 +266,13 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/25/hello-Hexo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="巅峰的大香蕉">
+      <meta itemprop="name" content="巅峰の大香蕉">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="http://mi-orange.com/xbx11.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="神の少年">
     </span>
 
     
@@ -289,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hello Hexo</h1>
+          <h1 class="post-title" itemprop="name headline">hexoテーマgithub配置およびサーバーの配置。</h1>
         
 
         <div class="post-meta">
@@ -311,6 +302,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/tools/" itemprop="url" rel="index">
+                    <span itemprop="name">tools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -339,7 +352,165 @@
       
 
       
-        
+        <p>第一步: 将最新的hexo版本从github clone到本地，执行npm install 相关操作可以参考<font color="red"><a href="https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md" title="gw" target="_blank" rel="noopener">官网</a></font>  </p>
+<p>第二步: 下载next的主题，将主题next放入hexo 的theme文件夹中，初始化主题数据，具体可以参考<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener">next官网</a></p>
+<p>第三步: 服务器设置（涉及nginx安装配置，git安装配置，创建git用户，权限设置，node环境下载安装，免密登录，自动化部署等）</p>
+<ol>
+<li><p>nginx 安装配置 <a href="https://www.cnblogs.com/taiyonghai/p/6728707.html" target="_blank" rel="noopener">https://www.cnblogs.com/taiyonghai/p/6728707.html</a><br>  server {</p>
+<pre><code>listen       80;
+server_name  xxxxxxx.com;
+root        /home/www/hexo;// 根目录
+charset utf-8;
+access_log  /home/logs/access.log  main;// 日志文件
+
+location / {
+        root        /home/www/hexo;
+        index       index.html;
+        try_files $uri $uri/ =404;
+}
+location ~ .*\.(ico|gif|jpg|jpeg|png)$ {  
+       expires 24h;  
+      root /home/common/images/; 
+     proxy_store on;  
+      proxy_store_access user:rw group:rw all:rw;  
+      proxy_temp_path     /home/common/images/; 
+      proxy_redirect     off;  
+      proxy_set_header    Host 127.0.0.1;  
+      client_max_body_size  10m;  
+      client_body_buffer_size 1280k;  
+      proxy_connect_timeout  900;  
+      proxy_send_timeout   900;  
+      proxy_read_timeout   900;  
+      proxy_buffer_size    40k;  
+      proxy_buffers      40 320k;  
+      proxy_busy_buffers_size 640k;  
+      proxy_temp_file_write_size 640k;  
+      if ( !-e $request_filename)  
+      {  
+         proxy_pass http://127.0.0.1;#默认80端口  
+      } 
+ }
+
+location ~ .*\.(js|css|txt|xml)?$ {
+        access_log   off;
+        expires      12h;
+}
+
+error_page 404 /404.html;
+    location = /404.html {
+}
+
+error_page 500 502 503 504 /50x.html;
+    location = /500.html {
+}
+</code></pre><p> }</p>
+</li>
+<li>nodejs 安装配置 <a href="https://segmentfault.com/a/1190000004051670" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004051670</a><br> #安装NodeJS<pre><code>curl --silent --location https://rpm.nodesource.com/setup_5.x | bash -
+</code></pre></li>
+<li>git环境搭建<br> #安装Git<pre><code>yum install git
+</code></pre></li>
+<li><p>创建git用户(此用户用来与服务器交互使用账号并不是指你github上的账户)  </p>
+<pre><code>在xhsell连上你远程服务器的命令面板输入
+adduser git
+chmod 740 /etc/sudoers
+vim /etc/sudoers
+找到以下内容
+## Allow root to run any commands anywhere
+root    ALL=(ALL)     ALL
+在下面添加一行
+git ALL=(ALL) ALL
+保存退出后改回权限
+chmod 400 /etc/sudoers
+随后设置Git用户的密码，
+#需要root权限
+sudo passwd git
+</code></pre><p>5.ssh免密登录</p>
+<pre><code>su git
+mkdir ~/.ssh  (具体的目录应该在/home/git/.ssh)
+vim ~/.ssh/authorized_keys
+#然后将电脑中执行 cat ~/.ssh/id_rsa.pub | clip ,将公钥复制粘贴到authorized_keys
+
+chmod 600 ~/.ssh/authorzied_keys
+chmod 700 ~/.ssh
+然后就可以执行ssh 命令测试是否可以免密登录
+
+ssh -v git@SERVER
+</code></pre><p>括号：之前我用eclipse的时候生成过一个ssh key,想也没想就直接复制粘贴，结果登录的时候还是要密码，google排查了好久，那个ssh key github账号也在使用, 我以为是服务器git账号权限不对，比对来比对去，索性直接再生成一个ssh key,然后复制粘贴，竟然竟然好了。。。。。真的是坑=。=括号完毕  </p>
+</li>
+<li><p>自动化部署(关键)</p>
+<pre><code> 创建git裸库，具体什么是裸库【裸库就是只保存git信息的Repository】
+ su git  //切换到git用户
+
+ cd /opt/repo //创建裸库的路径
+
+ git init --bare blog.git  //!记得一定不要忘加--bara
+
+ 配置git-hook(原理就是当我们本地终端提交代码到远程服务器的时候会触发git的钩子，我的理解应该是像vue里面生命周期一样)  
+ :scream:我之前都不到git竟然可以这样玩
+ 我们需要post-receive这个钩子，当git有收发的时候就会调用这个钩子，另外hook里面有一些.simple结尾的文件也是git的脚本，
+ 只要把.simple的后缀去掉就可以使用了。  
+
+ 具体操作就是在 ~/blog.git 裸库的 hooks文件夹中，新建post-receive文件。
+
+ vim post-receive
+
+ 写入
+ #!/bin/sh
+ git --work-tree=/home/www/hexo(存放网站资源的路径) --git-dir=/opt/repo/blog.git(这里面是你的裸库路径) checkout -f (这段代码的含义就是把终端提交上来的文件放入/home/www/hexo下面)
+
+ 按esc 输入:wq 退出以后再执行
+
+ chmod +x post-receive
+
+ 括号:自己不小心把www文件夹写成wwww,眼瞎的我在后面同步文件的时候一直报  
+ &quot;remote: fatal: Could not switch to &apos;/home/www/&apos;: ?????????&quot;   
+ 估计服务器也一直懵逼，这个目录在哪里呢....(花了半天才找出来)
+
+ 还有就是最重要的开启服务器RSA认证(=。=我看了网上的教程好像都没有，可能他们都是部署在githubPage上的)
+
+ cd /etc/ssh/sshd_config
+ RSAAuthentication yes
+ PubkeyAuthentication yes
+ AuthorizedKeysFile .ssh/authorized_keys
+
+其次我们需要创建/home/www/hexo文件夹，并将权限赋予git
+su git
+cd /home
+mkdir www
+cd /www
+mkdir hexo
+(如果发现git的权限创建不了，可以用root创建，再赋予git)赋予权限的语句是
+chown -R git:git /home/www/hexo  (-R 是递归的意思,以后在hexo下面创建的文件都属于git)
+</code></pre></li>
+<li><p>配置_config.yml,完成自动部署,(文件在hexo目录下指站点文件不是指主题文件配置)</p>
+<pre><code>打开 _config.yml, 找到 deploy
+deploy:
+type: git
+repo: //hexo 可以配置多条同步服务
+    ssh: git@SERVER:/home/git/blog.git    //&lt;repository url&gt; 如果只是想部署在githubPgae的同学这里就不要填了
+    githubPage: git@github.com/xxx/xx  // githubpage的仓库地址 //自己服务器仓库地址
+branch: master            //这里填写分支   [branch]
+message: 提交的信息         //自定义提交信息 (默认为 Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }})
+
+切换至本地开发环境
+在hexo项目根路径下
+hexo clean
+hexo generate
+hexo deploy 
+等待deploy done即可，然后就可以在githuPage及域名上看啦。。。。
+以后写文章的话可以使用hexo clean &amp;&amp; hexo g -d或者hexo d -g 两个命令都是相同的
+
+关于githubPage配置启用
+</code></pre><p>   首先githubPage给每个git用户都有1G的免费空间。。。这个写个博客话短时间应该没问题而且稳定，如果你的博客资料超过1G可以考虑部署在云机上…</p>
+<pre><code>第一步：建立一个githubPage仓库，名称和你的git账户名称一样（必须一样）
+第二部：添加ssh 公钥在git账户上添加下
+第三部: 在你新建的仓库上面点击setting按钮，然后再github Pages选型下面选择master branch 保存，设置custom domain填你的github page域名。
+沃德git 是https://github.com/remberi; 仓库是remberi.github.io ;githubPage域名是：https://remberi.github.io/
+第四步： hexo deploy(记得站点配置上加上你github的配置)
+打完！收工！
+</code></pre></li>
+</ol>
+
       
     </div>
     
@@ -354,27 +525,17 @@
 
     <footer class="post-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/01/24/hello-world/" rel="next" title="你好啊">
-                <i class="fa fa-chevron-left"></i> 你好啊
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/野外实践/" rel="tag"># 野外实践</a>
+          
         </div>
+      
+
+      
+      
+      
+
       
 
       
@@ -430,10 +591,10 @@
             
               <img class="site-author-image" itemprop="image"
                 src="http://mi-orange.com/xbx11.jpg"
-                alt="巅峰的大香蕉" />
+                alt="巅峰の大香蕉" />
             
-              <p class="site-author-name" itemprop="name">巅峰的大香蕉</p>
-              <p class="site-description motion-element" itemprop="description">あなたの名前は私です。</p>
+              <p class="site-author-name" itemprop="name">巅峰の大香蕉</p>
+              <p class="site-description motion-element" itemprop="description">私たちは同じ星空を仰ぎ見ていたが、違うものが見えた。</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -443,20 +604,48 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
 
           
 
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/remberi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
           
 
           
@@ -484,11 +673,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018.01.26 &mdash; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">巅峰的大香蕉</span>
+  <span class="author" itemprop="copyrightHolder">巅峰の大香蕉</span>
 
   
 </div>
@@ -549,6 +738,8 @@
   
 
 
+  
+
 
 
 
@@ -587,6 +778,11 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
