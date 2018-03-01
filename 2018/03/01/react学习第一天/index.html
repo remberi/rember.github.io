@@ -111,21 +111,74 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title" style="background-color:#FF8C00;background-image:url(https://mi-orange.com/yys_2.jpg)" >
-  <h2>2018.02.24 第一章</h2>
+  <div class="post-page-title" style="background-color:#FF8C00;background-image:url(https://mi-orange.com/yys_5.jpg)" >
+  <h2>react学习第一天</h2>
     
-  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-02-24T07:28:22.000Z">
-          2018-02-24
+  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-03-01T07:50:43.000Z">
+          2018-03-01
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  <p>列举下2018将要做的事情或者是要达到的目标！</p>
-<p>1: 阅读并理解vue源码</p>
-<p>2：学习并实践react项目</p>
-<p>3：等等让我再想想！</p>
+  <p>之前关注react很久了，一直想要去实践尝试，但苦于没有充足的时间去研究，都是一天看一点点，也是一只半解，只知道react是一个视图框架，facebook提出，前端模块化先驱，单项数据流提倡者…而且学习成本比vue高，比较适合大型前端项目。。。。。。。。。</p>
+<p>在SegmentFault找到一篇比较适合入门级的教程，因为之前学过vue，所以一直很好奇react到底和vue有什么区别，开头介绍了react的发展情况，主要是为了解决前端繁琐重复的造轮子，解放前端视图更新，将数据和视图关联起来，这么一听和vue好像差不多，vue也是数据驱动模型，不同的是react仅负责视图，vue是mvvm(模型+视图)</p>
+<p>react 定义组件的写法有两种，一个是类继承，一种是函数式；（vue是函数式，分7种沃德天怎么辣么多【字符串、模板字面量、x-template、内联模板、render 函数、JSF、单文件组件）目前单文件组件用的比较多，可能和它能把资源和模版独立开来有关吧</p>
+<p>react类继承写法</p>
+<pre><code>import React, {Component} from &apos;react&apos;;
+class HelloMessage extends Component {
+    render() {
+        return &lt;div&gt;Hello world.&lt;/div&gt;;
+    }
+}
+</code></pre><p>学过java的同学是不是感觉很熟悉，关键字class，extend玛德这个不就是java里面的继承吗!!!<strong>(ES6 为 JavaScript 增加了类和类继承的特性。子类会继承父类的“基因”（成员方法、属性），如果父类是一个组件，那子类自然而然也是一个组件)</strong>。如果有后端基础的同学看到react的写法一定会感的很亲切=。=[还好之前在培训班耍过几天java]</p>
+<p>react 函数式写法<br>    import React from ‘react’;</p>
+<pre><code>function HelloMessage() {
+    return &lt;div&gt;Hello world.&lt;/div&gt;;
+}
 
+// 或者：
+
+const HelloMessage = () =&gt; &lt;div&gt;Hello world.&lt;/div&gt;;
+</code></pre><p>注意一下啊！组件的第一个字母必须大写，不然react会因为小写看错成内部标签鸡儿不渲染组件的。</p>
+<p>目前继承式写法比较多。。。。。因为</p>
+<p>类继承的方式，相较于函数式组件，虽然写起来略繁琐，但是它拥有更多的特性：内部状态：state，生命周期函数</p>
+<p>函数式组件虽然没有 state 和生命周期函数等特性，但是它有更简洁的书写方式，另外还有更好的性能，不用处理一些复杂的特性，执行效率当然高了。</p>
+<p>react 生命周期</p>
+<pre><code>componentWillMount：在组件被渲染到页面上之前执行，在组件的整个生命周期内只执行一次。在这里可以调用 setState 更新内部状态，但是更推荐将这里的状态更新操作放到 constructor 中。该函数执行完后会立马执行 render 方法并将组件渲染到页面上。所以，在这里执行 setState 不会触发额外的渲染过程，因为这是没有必要的。
+
+componentDidMount：组件被渲染到页面上后立马执行，在组件的整个生命周期内只执行一次。这个时候是做如下操作的好时机：
+        某些依赖组件 DOM 节点的操作。
+        发起网络请求。
+        设置 setInterval、setTimeout 等计时器操作。
+        在这里可以调用 setState 更新组件内部状态，且会触发一个重新渲染的过程，即会重新执行 render 方法并更新视图。
+
+componentWillReceiveProps：componentWillReceiveProps(nextProps)
+                        该声明周期函数可能在两种情况下被调用：
+
+                        组件接收到了新的属性。新的属性会通过 nextProps 获取到。
+
+                        组件没有收到新的属性，但是由于父组件重新渲染导致当前组件也被重新渲染。
+
+                        你只要知道，当该函数被调用时，并不一定是因为属性发生了变化。
+
+                        在这里也可以调用 setState 更新组件的内部状态，同样也不会触发额外的重新渲染操作，React 会聪明地用更新后的属性和内部状态进行一次重新渲染。
+
+
+shouldComponentUpdate：shouldComponentUpdate(nextProps, nextState)
+
+componentWillUpdate
+
+componentDidUpdate
+
+react：状态提升
+
+状态提升的意思是，当组件 A 需要依赖另外一个组件 B 的内部状态，而他们又不是父子关系时，需要将组件 B 的内部状态提升到他们公共的祖先组件中管理。这样他们就都可以通过属性接收到这份数据了。
+当组件 B 需要对数据进行变更时，可以通过函数属性来通知祖先组件对数据更新，然后重新传递给子组件。
+
+
+react中遵从单项数据流的时候存在的问题，当页面逻辑层级非常深的时候，组件之间通信就变的非常的繁琐，虽然有替代方案及ref实现但是这个不鼓励而且以后的版本更新可能需去除。
+</code></pre>
   </div>
   <!--评论块-->
     
@@ -134,15 +187,11 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
-  <a href="/2018/03/01/react学习第一天/" id="post_nav-newer" class="post-nav-content prev-content">
-      新篇
-  </a>
-    
 
 
   <!-- Next Nav -->
     
-  <a href="/2018/01/25/hello-Hexo/" id="post_nav-older" class="post-nav-content next-content">
+  <a href="/2018/02/24/2018-02-24第一章/" id="post_nav-older" class="post-nav-content next-content">
       旧篇
   </a>
     
