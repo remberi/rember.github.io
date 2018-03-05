@@ -111,17 +111,42 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:rgba(198,235,189,0.35);background-image:url(/images/random/vateral-7.png)" >
-  <h2>categories</h2>
+  <div class="post-page-title" style="background-color:rgba(198,235,189,0.35);background-image:url(https://mi-orange.com/yys_9.jpg)" >
+  <h2>offset获取元素相对于屏幕的偏移量</h2>
     
-  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-01-26T08:25:32.000Z">
-          2018-01-26
+  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-03-05T03:15:24.000Z">
+          2018-03-05
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  
+  <p>HTMLElement.offsetLeft / offsetTop 是指当前元素相对于父元素节点的左边界/上边界的偏移量。</p>
+<p>因此要求当前元素相对于整个页面的偏移量，我们需要不断向父级元素迭代，累加相应的 offset 值。</p>
+<p>方案一：</p>
+<pre><code>function getOffset(domNode) {
+    let offsetTop = 0;
+    let offsetLeft = 0;
+    let targetDomNode = domNode;
+    while (targetDomNode !== window.document.body &amp;&amp; targetDomNode != null) {
+        offsetLeft += targetDomNode.offsetLeft;
+        offsetTop += targetDomNode.offsetTop;
+        targetDomNode = targetDomNode.offsetParent;
+    }
+    return {
+        offsetTop,
+        offsetLeft
+    };
+}
+</code></pre><p>方案二:getBoundingClientRect:用于获取某个html元素相对于视窗的位置集合。</p>
+<pre><code>// use getBoundingClientRect
+let top, left, right, bottom, rect;
+rect = el.getBoundingClientRect();
+top = rect.top;
+left = rect.left;
+bottom = rect.bottom;
+right = rect.right;
+</code></pre>
   </div>
   <!--评论块-->
     
@@ -130,9 +155,17 @@
 <nav class="post-nav">
   <!-- Prev Nav -->
     
+  <a href="/2018/03/05/react的思考/" id="post_nav-newer" class="post-nav-content prev-content">
+      新篇
+  </a>
+    
 
 
   <!-- Next Nav -->
+    
+  <a href="/2018/03/01/react学习第一天/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
     
 </nav>
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>

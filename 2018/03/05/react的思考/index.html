@@ -111,17 +111,23 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title"  style="background-color:rgba(198,235,189,0.35);background-image:url(/images/random/vateral-7.png)" >
-  <h2>categories</h2>
+  <div class="post-page-title"  style="background-color:rgba(198,235,189,0.35);background-image:url(/images/random/vateral-6.png)" >
+  <h2>react的思考</h2>
     
-  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-01-26T08:25:32.000Z">
-          2018-01-26
+  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-03-05T03:51:39.000Z">
+          2018-03-05
     </time>
   </p>
     
   </div>
   <div class="post-page-content">
-  
+  <p>react 每一次界面变化都是整体刷新</p>
+<p>数据模型驱动UI界面的两层编程模型从概念角度看上去是直观的，而在实际开发中却困难重重。一个数据模型的变化可能导致分散在界面多个角落的UI同时发生变化。界面越复杂，这种数据和界面的一致性越难维护。在Facebook内部他们称之为“Cascading Updates”，即层叠式更新，意味着UI界面之间会有一种互相依赖的关系。开发者为了维护这种依赖更新，有时不得不触发大范围的界面刷新，而其中很多并不真的需要。React的初衷之一就是，既然整体刷新一定能解决层叠更新的问题，那我们为什么不索性就每次都这么做呢？让框架自身去解决哪些局部UI需要更新的问题。这听上去非常有挑战，但React却做到了，实现途径就是通过虚拟DOM（Virtual DOM）。</p>
+<p>单向数据流动：Flux</p>
+<p>既然已经有了组件机制去定义界面，那么还需要一定的机制来定义组件之间，以及组件和数据模型之间如何通信。为此，Facebook提出了Flux框架用于管理数据流。Flux是一个相当宽松的概念框架，同样符合React简单直观的原则。不同于其它大多数MVC框架的双向数据绑定，Flux提倡的是单向数据流动，即永远只有从模型到视图的数据流动。</p>
+<p>Flux引入了Dispatcher和Action的概念：Dispatcher是一个全局的分发器负责接收Action，而Store可以在Dispatcher上监听到Action并做出相应的操作。简单的理解可以认为类似于全局的消息发布订阅模型。Action可以来自于用户的某个界面操作，比如点击提交按钮；也可以来自服务器端的某个数据更新。当数据模型发生变化时，就触发刷新整个界面</p>
+<p>=。=突然发现java 的 struts框架也是通过dispatch拦截器来分发action请求的，前后端果然是相通的。</p>
+
   </div>
   <!--评论块-->
     
@@ -133,6 +139,10 @@
 
 
   <!-- Next Nav -->
+    
+  <a href="/2018/03/05/offset获取元素相对于屏幕的偏移量/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
     
 </nav>
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
