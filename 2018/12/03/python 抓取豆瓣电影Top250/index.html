@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  
+  <meta name="keywords" content="米.华">
+  <meta name="description" content="华.米">
+  
+  <title>神の少年</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/materialize.min.css">
+    
+      <link rel="stylesheet" href="/css/main.min.css">
+    
+  
+  <style type="text/css">
+      html{
+          font-family: sans-serif;
+          font-weight: 300;
+      }
+      @font-face {
+          font-family: 'Material Icons';
+          font-style: normal;
+          font-weight: 400;
+          src: url(/fonts/MaterialIcons-Regular.eot);
+          src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+          url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+          url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+      }
+  </style>
+<link rel="shortcut icon" href="/source/favicon.ico">
+</head>
+<body>
+<div id="menu-box"><a href="javascript:void(0)" id="menu" data-activates="slide-out" class="button-collapse menu" ><span class="nav-btn"></span></a></div>
+<div id="menu-outer">
+  <div id="menu-inner">
+      <ul id="slide-out" class="side-nav" >
+    <div class="nav-header"  style="background-image: url(https://mi-orange.com/xbx10.jpg);background-color:rgba(198,235,189,0.35)">
+    <div class="header-box"><img src="https://mi-orange.com/xbx11.jpg" ondragstart="return false;"></div>
+    <p>巅峰の大香蕉</p>
+    <div class="nav-link">
+        
+        
+        <a  href="https://github.com/remberi" target="_blank"><div class="link-box github"></div></a>
+        
+        
+        
+        
+    </div>
+    <div class="nav-search">
+        <form id="search-form"> <!-- 搜索框相关 -->
+            <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+            <div class="nav-search-img"><i class="material-icons">search</i></div>
+        </form>
+        <div id="local-search-result"></div> <!-- 搜索结果区 -->
+        <p class='no-result'>无搜索结果</p>
+    </div>
+</div>
+    <!--Homepage-->
+
+<li class="nav-list">
+    <a href="/" target="_self">
+        <div class="nav-ico"><i class="material-icons">home</i> </div><p>主页</p>
+    </a>
+</li>
+
+<!--archives-->
+
+<li class="nav-list dropdown-btn">
+    <a  class=""  target="_self">
+        <div class="nav-ico"><i class="material-icons">assignment</i></div><p>归档</p><div class="dropdown-ico"><i class="material-icons">arrow_drop_down</i></div>
+    </a>
+</li>
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="archive-link" href="/archives/2018/12/">December 2018<span class="archive-count">2</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/03/">March 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/02/">February 2018<span class="archive-count">1</span></a></li><li class="nav-dropdown-list"><a class="archive-link" href="/archives/2018/01/">January 2018<span class="archive-count">1</span></a>
+    </li>
+</ul>
+<!--categories-->
+
+<ul class="dropdown-menu dropdown" >
+    <li class="nav-dropdown-list">
+        <a class="category-link" href="/categories/clsjavascript/">clsjavascript<span class="category-count">3</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/temper/">temper<span class="category-count">1</span></a></li><li class="nav-dropdown-list"><a class="category-link" href="/categories/tools/">tools<span class="category-count">1</span></a>
+    </li>
+</ul>
+<!--tags-->
+
+<li class="nav-list">
+    <a href="/archives" target="_self">
+        <div class="nav-ico"><i class="material-icons">bookmark</i> </div><p>标签</p>
+    </a>
+</li>
+
+<!--photo-->
+
+<!--friends-->
+
+<!--about-->
+
+
+</ul>
+
+  </div>
+</div>
+
+<div id="content-outer">
+  <div id="content-inner">
+    
+<article id="post">
+  <div class="post-page-title" style="background-color:rgba(198,235,189,0.35);background-image:url(https://mi-orange.com/yys_3.jpg)" >
+  <h2>python 获取豆瓣电影top25</h2>
+    
+  <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-12-03T10:28:24.000Z">
+          2018-12-03
+    </time>
+  </p>
+    
+  </div>
+  <div class="post-page-content">
+  <p>环境： window python2.7 mysql5.1 vscode</p>
+<p>选python2.7 是因为目前python2.7 比较稳定,很多公司目前还是使用python2.7来做生产环境的。</p>
+<p>遇到的问题：</p>
+<p>1.乱码</p>
+<pre><code>俗话说万事开头难,但是开头就这么难就有点过分了啊，写了中文的hello world print(&apos;你好&apos;)你都乱码。。。。。。你让我情何以堪。
+网上一大堆解决乱码的，比如增加环境变量、开头写UTF-8注释，修改文件保存格式、等等
+但是一一验证下来都不行,我一度怀疑我是不是下错版本或者没下什么插件，最后排查出来vscode的powerShell是已GBK方式的输出的，必须用在powershell 里面输入chcp 650001 切换成utf-8输出才行，而且这个是临时的。。。。关闭重新打开又是gbk的。。。。。必须吐槽python对中文的不友好。。。。说道中文，因为python使用的是unicode的标准，遇到字符累加或者是写入文件感觉转换起来特别麻烦，各种utf8z转来转去，decode/encode使用。话不多说放源码。
+</code></pre><p>###douban.py</p>
+<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>import requests</p>
+<p>import re</p>
+<p>import urllib</p>
+<p>import io</p>
+<p>from lxml import etree</p>
+<p>import sys</p>
+<p>import mysql</p>
+<p>import datetime</p>
+<p>reload(sys)</p>
+<p>sys.setdefaultencoding(“utf-8”)</p>
+<p>DOWNLOAD_URL = ‘<a href="https://movie.douban.com/top250?start=" target="_blank" rel="noopener">https://movie.douban.com/top250?start=</a>‘</p>
+<p>def download_page(url):</p>
+<pre><code>print &apos;%s %s&apos; % (&apos;requestUrl-----------&apos;, DOWNLOAD_URL)
+
+responseBody = &apos;&apos;
+
+&quot;&quot;&quot;获取url地址页面内容&quot;&quot;&quot;
+
+headers = {
+    &apos;User-Agent&apos;: &apos;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36&apos;
+}
+data = requests.get(url, headers=headers)
+
+resposeCode = data.status_code
+
+if resposeCode == 200:
+
+    responseBody = data.content
+else:
+    responseBody = &quot;接口返回异常&quot;
+
+# print responseBody
+
+return responseBody
+</code></pre><p>def filterHtml(i):</p>
+<pre><code>html = download_page(DOWNLOAD_URL+str(25*i))
+#将返回的字符串格式的html代码转换成xpath能处理的对象
+html = etree.HTML(html)
+#先定位到li标签，datas是一个包含25个li标签的list，就是包含25部电影信息的list
+datas = html.xpath(&apos;//ol[@class=&quot;grid_view&quot;]/li&apos;)
+a = 0
+for data in datas:
+    data_title = data.xpath(&apos;div/div[2]/div[@class=&quot;hd&quot;]/a/span[1]/text()&apos;)
+    data_detail = data.xpath(&apos;div/div[2]/div[@class=&quot;hd&quot;]/a/@href&apos;)
+    data_doubanid = re.findall(r&apos;\d+&apos;, unicode(str(data_detail[0]))) # 正则匹配数字
+    data_info = data.xpath(&apos;div/div[2]/div[@class=&quot;bd&quot;]/p[1]/text()&apos;)
+    data_quote = data.xpath(&apos;div/div[2]/div[@class=&quot;bd&quot;]/p[2]/span/text()&apos;)
+    data_score = data.xpath(&apos;div/div[2]/div[@class=&quot;bd&quot;]/div/span[@class=&quot;rating_num&quot;]/text()&apos;)
+    data_nums = data.xpath(&apos;div/div[2]/div[@class=&quot;bd&quot;]/div/span[4]/text()&apos;)
+    data_num = re.findall(r&apos;\d+&apos;, unicode(str(data_nums)))
+    data_picurl = data.xpath(&apos;div/div[1]/a/img/@src&apos;)
+    print(&quot;No: &quot;+str(i*25+a+1))
+    # print data_title[0]
+    # print data_title[0].encode(&quot;gbk&quot;) #cmd终端默认是gbk方式运行 
+    #保存电影信息到txt文件，下载封面图片
+
+    #插入数据库
+
+    if data_quote:
+        mysql.insert(data_doubanid[0], data_title[0],
+                 &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, data_quote[0], data_score[0], data_num[0], &quot;&quot;, data_detail[0])
+    else:
+        mysql.insert(data_doubanid[0], data_title[0],
+                     &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot;, data_score[0], data_num[0], &quot;&quot;, data_detail[0])
+
+    with io.open(&apos;E:\\douban250.txt&apos;, &apos;a&apos;, encoding=&apos;utf-8&apos;) as f:
+        #封面图片保存路径和文件名
+        picname = &apos;E:/top250/&apos;+str(i*25+a+1)+&apos;.jpg&apos;
+        f.write(unicode(&quot;No: &quot;+str(i*25+a+1)+&apos;\n&apos;))
+        f.write(data_doubanid[0]+&apos;\n&apos;)
+        f.write(data_title[0]+&apos;\n&apos;)
+        f.write(unicode(str(data_info[0]).strip()+&apos;\n&apos;))
+        f.write(unicode(str(data_info[1]).strip()+&apos;\n&apos;))
+        f.write(unicode(data_score[0]+&apos;\n&apos;))
+        f.write(data_num[0]+&apos;\n&apos;)
+        #因为发现有几部电影没有quote，所以这里加个判断，以免报错
+        if data_quote:
+            f.write(unicode(data_quote[0]+&apos;\n&apos;))
+        f.write(unicode(data_detail[0]+&apos;\n&apos;))
+        f.write(unicode(&apos;\n&apos;*3))
+        #下载封面图片到本地，路径为picname
+        urllib.urlretrieve(unicode(data_picurl[0]), filename=picname)
+    a += 1
+</code></pre><p>print(“start time” + str(datetime.datetime.now()))<br>for i in range(10):<br>    filterHtml(i)<br>print(“end time” + str(datetime.datetime.now()))</p>
+<h1 id="mysql-py"><a href="#mysql-py" class="headerlink" title="mysql.py"></a>mysql.py</h1><h1 id="coding-UTF-8"><a href="#coding-UTF-8" class="headerlink" title="-- coding: UTF-8 --"></a>-<em>- coding: UTF-8 -</em>-</h1><p>import MySQLdb</p>
+<p>def insert(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11):</p>
+<pre><code>print arg1
+
+# 打开数据库连接
+db = MySQLdb.connect(&quot;ip address &quot;, &quot;name&quot;, &quot;password&quot;,
+                    &quot;python&quot;, charset=&apos;utf8&apos;)
+
+# 使用cursor()方法获取操作游标
+cursor = db.cursor()
+
+# SQL 插入语句
+sql = &quot;INSERT INTO douban_movie_top250(doubanId,name, director, actors, year,country,review,score,participants,theme,detail) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s )&quot;
+
+# print sql
+
+try:
+    # 使用execute方法执行SQL语句
+    cursor.execute(sql,(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11))
+    # 提交到数据库执行
+    db.commit()
+except :
+    # 发生错误时回滚
+    print &quot;mysql insert error&quot;
+
+    db.rollback()
+
+
+# 关闭数据库连接
+cursor.close()
+db.close()
+
+return &quot;success&quot;
+</code></pre><h1 id="insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”"><a href="#insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”" class="headerlink" title="insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))"></a>insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))</h1>
+  </div>
+  <!--评论块-->
+    
+
+</article>
+<nav class="post-nav">
+  <!-- Prev Nav -->
+    
+
+
+  <!-- Next Nav -->
+    
+  <a href="/2018/12/03/otter数据库同步搭建/" id="post_nav-older" class="post-nav-content next-content">
+      旧篇
+  </a>
+    
+</nav>
+<div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
+<div class="post-toc-none"><p>(无)</p></div>
+<div class="post-toc-box">
+    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#coding-utf-8"><span class="post-toc-number">1.</span> <span class="post-toc-text">-- coding: utf-8 --</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysql-py"><span class="post-toc-number">2.</span> <span class="post-toc-text">mysql.py</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#coding-UTF-8"><span class="post-toc-number">3.</span> <span class="post-toc-text">-- coding: UTF-8 --</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”"><span class="post-toc-number">4.</span> <span class="post-toc-text">insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))</span></a></li></ol>
+</div>
+<!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
+<script type="text/javascript">
+    menu();
+</script>
+  </div>
+</div>
+<div id="bottom-outer">
+  <div id="bottom-inner">
+    <a  id="top-button" onfocus="this.blur();"><div class="up upinbody" style="background-color:rgba(198,235,189,0.35)"><i class="material-icons material-up">vertical_align_top</i></div></a>
+
+
+<p style="line-height: 45px">Copyright ©  2017  神の少年</p>
+<p style="line-height: 45px">Powered by <a href="https://hexo.io/" target="_blank"> Hexo </a> && Theme - <a href="https://github.com/moumao/hexo-theme-Vateral" target="_blank">Vateral</a></p>
+
+  </div>
+</div>
+
+<!--影集界面需要的资源-->
+
+
+
+<!-- scripts list from theme config.yml -->
+
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/materialize.min.js"></script>
+
+<script src="/js/main.min.js"></script>
+
+
+<script>
+    NProgress.start();
+    NProgress.done();
+    lazy();
+    links();
+    window.onpopstate = menu();
+    //pjax操作
+    $(document).pjax('a:not(.nopjax)', '#content-inner', {fragment:'#content-inner', timeout:8000});
+    $(document).on('pjax:start', NProgress.start).on('pjax:end', NProgress.done)
+        .on('pjax:end', () => {
+            dowmdiv();
+            lazy();
+            toc();
+            links();
+            menu();
+        });
+</script>
+
+</body>
+</html>
