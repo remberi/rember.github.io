@@ -111,7 +111,7 @@
   <div id="content-inner">
     
 <article id="post">
-  <div class="post-page-title" style="background-color:rgba(198,235,189,0.35);background-image:url(https://mi-orange.com/yys_3.jpg)" >
+  <div class="post-page-title" style="background-color:rgba(198,235,189,0.35);background-image:url(https://mi-orange.com/yys_15.jpg)" >
   <h2>python 获取豆瓣电影top25</h2>
     
   <p>作者:巅峰の大香蕉 &nbsp&nbsp 发布于:<time datetime="2018-12-03T10:28:24.000Z">
@@ -128,8 +128,12 @@
 <pre><code>俗话说万事开头难,但是开头就这么难就有点过分了啊，写了中文的hello world print(&apos;你好&apos;)你都乱码。。。。。。你让我情何以堪。
 网上一大堆解决乱码的，比如增加环境变量、开头写UTF-8注释，修改文件保存格式、等等
 但是一一验证下来都不行,我一度怀疑我是不是下错版本或者没下什么插件，最后排查出来vscode的powerShell是已GBK方式的输出的，必须用在powershell 里面输入chcp 650001 切换成utf-8输出才行，而且这个是临时的。。。。关闭重新打开又是gbk的。。。。。必须吐槽python对中文的不友好。。。。说道中文，因为python使用的是unicode的标准，遇到字符累加或者是写入文件感觉转换起来特别麻烦，各种utf8z转来转去，decode/encode使用。话不多说放源码。
-</code></pre><p>###douban.py</p>
-<h1 id="coding-utf-8"><a href="#coding-utf-8" class="headerlink" title="-- coding: utf-8 --"></a>-<em>- coding: utf-8 -</em>-</h1><p>import requests</p>
+
+
+###douban.py
+
+# -*- coding: utf-8 -*-
+</code></pre><p>import requests</p>
 <p>import re</p>
 <p>import urllib</p>
 <p>import io</p>
@@ -212,8 +216,19 @@ for data in datas:
         #下载封面图片到本地，路径为picname
         urllib.urlretrieve(unicode(data_picurl[0]), filename=picname)
     a += 1
-</code></pre><p>print(“start time” + str(datetime.datetime.now()))<br>for i in range(10):<br>    filterHtml(i)<br>print(“end time” + str(datetime.datetime.now()))</p>
-<h1 id="mysql-py"><a href="#mysql-py" class="headerlink" title="mysql.py"></a>mysql.py</h1><h1 id="coding-UTF-8"><a href="#coding-UTF-8" class="headerlink" title="-- coding: UTF-8 --"></a>-<em>- coding: UTF-8 -</em>-</h1><p>import MySQLdb</p>
+
+
+print(&quot;start time&quot; + str(datetime.datetime.now()))
+for i in range(10):
+filterHtml(i)
+print(&quot;end time&quot; + str(datetime.datetime.now()))
+
+
+
+
+# mysql.py
+# -*- coding: UTF-8 -*-
+</code></pre><p>import MySQLdb</p>
 <p>def insert(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11):</p>
 <pre><code>print arg1
 
@@ -246,7 +261,8 @@ cursor.close()
 db.close()
 
 return &quot;success&quot;
-</code></pre><h1 id="insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”"><a href="#insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”" class="headerlink" title="insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))"></a>insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))</h1>
+# insert(&quot;1&quot;, &quot;11&quot;, str(&quot;&quot;), str(&quot;&quot;), str(&quot;&quot;),str(&quot;&quot;), str(&quot;&quot;), 9, str(&quot;&quot;), str(&quot;&quot;), str(&quot;&quot;))
+</code></pre>
   </div>
   <!--评论块-->
     
@@ -267,7 +283,7 @@ return &quot;success&quot;
 <div class="post-toc-btn"><i class="material-icons">format_list_numbered</i></div>
 <div class="post-toc-none"><p>(无)</p></div>
 <div class="post-toc-box">
-    <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#coding-utf-8"><span class="post-toc-number">1.</span> <span class="post-toc-text">-- coding: utf-8 --</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#mysql-py"><span class="post-toc-number">2.</span> <span class="post-toc-text">mysql.py</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#coding-UTF-8"><span class="post-toc-number">3.</span> <span class="post-toc-text">-- coding: UTF-8 --</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#insert-“1”-“11”-str-“”-str-“”-str-“”-str-“”-str-“”-9-str-“”-str-“”-str-“”"><span class="post-toc-number">4.</span> <span class="post-toc-text">insert(“1”, “11”, str(“”), str(“”), str(“”),str(“”), str(“”), 9, str(“”), str(“”), str(“”))</span></a></li></ol>
+    
 </div>
 <!--<div class="post-back"><i class="material-icons">arrow_back</i></div>-->
 <script type="text/javascript">
